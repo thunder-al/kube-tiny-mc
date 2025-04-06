@@ -1,0 +1,6 @@
+apiVersion: v2
+name: helm
+description: A helm chart to deploy common minecraft server. See https://github.com/thunder-al/kube-tiny-mc
+type: application
+version: 0.0.0
+appVersion: "0.0.0"

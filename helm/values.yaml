@@ -1,0 +1,16 @@
+server:
+  image: ""
+  resources:
+    requests:
+      cpu: 50m
+      memory: 128Mi
+    limits:
+      cpu: 2000m
+      memory: 2Gi
+  storage:
+    enabled: true
+    size: 1Gi
+    class: ""
+
+serviceNodePort:
+  enabled: true

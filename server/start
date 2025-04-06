@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+# example start script for a Minecraft server
+# should work with most servers
+# you may need to add java params for your server. e.g. -Xmx1024M -Xms512M
+
+java -jar server.jar nogui

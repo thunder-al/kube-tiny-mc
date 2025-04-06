@@ -1,0 +1,19 @@
+#!/usr/bin/env sh
+
+if [ ! -f /srv/server/start ]; then
+    echo "==> Start file not found, copying files from /srv/server-init to /srv/server"
+    mkdir -p /srv/server
+    cp -r /srv/server-init/* /srv/server/
+fi
+
+cd /srv/server;
+
+if [ -f start ]; then
+    echo "==> Starting server with start file"
+    set -e
+    bash ./start
+else
+    echo "==> No start file found, exiting"
+    sleep 2
+    exit 1
+fi
