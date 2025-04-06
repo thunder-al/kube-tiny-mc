@@ -1,5 +1,8 @@
 #!/usr/bin/env sh
 
+# this command is used to let kubernetes know that the server is failing by exiting with a non-zero code
+set -e
+
 # example start script for a Minecraft server
 # should work with most servers
 # you may need to add java params for your server. e.g. -Xmx1024M -Xms512M

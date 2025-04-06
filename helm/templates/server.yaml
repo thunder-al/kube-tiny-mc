@@ -17,7 +17,11 @@ spec:
           image: {{ .Values.server.image | required "server.image is required" | quote }}
           tty: true
           stdin: true
-{{/*          resources: {{- toYaml .Values.server.resources | indent 12 }}*/}}
+          resources: {{- toYaml .Values.server.resources | nindent 12 }}
+          ports:
+            - name: minecraft
+              containerPort: 25565
+              protocol: TCP
           {{- if .Values.server.storage.enabled }}
           volumeMounts:
             - name: server-data
@@ -68,3 +72,8 @@ spec:
   type: NodePort
   selector:
     app: "{{ .Release.Name }}-server"
+  ports:
+    - name: minecraft
+      port: 25565
+      targetPort: minecraft
+      protocol: TCP
